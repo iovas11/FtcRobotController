@@ -12,7 +12,11 @@ public class TestBench {
 
     }
 
-    public boolean getTouchSensorState() {
+    public boolean isTouchSensorPressed() {
+        return !touchSensor.getState();
+    }
+
+    public boolean isTouchSensorReleased() {
         return touchSensor.getState();
     }
 }
