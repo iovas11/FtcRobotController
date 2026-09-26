@@ -12,13 +12,13 @@ public class VariablePractice extends OpMode {
         int teamNumber = 23014;
         double motorSpeed = 0.75;
         boolean clawClosed = true;
-        String teamname = "Amadeus";
+        String teamname = "StrixNovus";
 
         telemetry.addData("Team Number" , teamNumber);
         telemetry.addData("motor speed", motorSpeed);
         telemetry.addData("claw closed", clawClosed);
         telemetry.addData("Name", teamname);
-    telemetry.addData("Motor angle" , motorAngle);
+        telemetry.addData("Motor angle" , motorAngle);
     }
 
 
