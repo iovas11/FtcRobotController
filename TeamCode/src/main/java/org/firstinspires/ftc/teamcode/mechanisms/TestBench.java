@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.mechanisms;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -17,6 +18,8 @@ public class TestBench {
         motor = hwMap.get(DcMotor.class, "motor");
         motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         ticksPerRev = motor.getMotorType().getTicksPerRev();
+        motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motor.setDirection((DcMotorSimple.Direction.REVERSE));
 
     }
 
@@ -36,5 +39,8 @@ public class TestBench {
 
     public double getMotorRevs() {
         return motor.getCurrentPosition() / ticksPerRev; //normalizing ticks to revolution
+    }
+    public void setMotorZeroBehavior(DcMotor.ZeroPowerBehavior zeroBehavior) {
+        motor.setZeroPowerBehavior(zeroBehavior);
     }
 }
