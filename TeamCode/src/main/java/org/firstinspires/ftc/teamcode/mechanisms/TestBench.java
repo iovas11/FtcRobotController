@@ -4,12 +4,18 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.IMU;
+
+import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
 
 public class TestBench {
     private DcMotor motor; //linearSlideMotor0
     private double ticksPerRev; //revolution
+    public IMU imu;
     private DigitalChannel touchSensor; //default name for touch sensor
-
+    public YawPitchRollAngles getOrientation() {
+        return imu.getRobotYawPitchRollAngles();
+    }
     public void init(HardwareMap hwMap) {
         //Touch Sensor
         touchSensor = hwMap.get(DigitalChannel.class, "touch_sensor");
