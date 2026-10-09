@@ -25,9 +25,3 @@ double forward, strafe, rotate;
 
     }
 }
- /*all this helps with making the robot drive in the hps pov
- if the robot is facing north and the hp is facing south
- the directions [forward reverse left strafe right strafe]
- of the robot are going to be the same as the ones of the
- human player.
-  */
