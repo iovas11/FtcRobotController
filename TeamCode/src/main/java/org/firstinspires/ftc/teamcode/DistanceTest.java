@@ -12,7 +12,6 @@ public class DistanceTest extends OpMode {
     public void init() {
         bench.init(hardwareMap);
 
-
     }
 
 
