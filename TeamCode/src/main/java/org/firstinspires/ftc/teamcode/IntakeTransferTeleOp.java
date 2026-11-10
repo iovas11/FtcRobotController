@@ -32,6 +32,7 @@ public class IntakeTransferTeleOp extends LinearOpMode {
 
             if (gamepad1.circle) {
                 motorIntake.setPower(0.0);
+                motorTransfer.setPower(0.0);
             }
             else if (gamepad1.right_bumper) {
                 motorIntake.setPower(-1.0);
@@ -39,22 +40,17 @@ public class IntakeTransferTeleOp extends LinearOpMode {
             else if (gamepad1.left_bumper) {
                 motorIntake.setPower(1.0);
             }
+            else if (gamepad1.dpad_left){
+                motorTransfer.setPower(0.8);
+            } else if (gamepad1.dpad_right) {
+                motorTransfer.setPower(-0.8);
+            }
             else {
                 motorIntake.setPower(0.0);
+                motorTransfer.setPower(0.0);
             }
-
         }
-         if (gamepad1.dpad_left) {
 
-             motorTransfer.setPower(0.8);
-         }
-         else if (gamepad1.dpad_right) {
-             motorTransfer.setPower(-0.8);
-
-         }
-         else {
-             motorTransfer.setPower(0.0);
-         }
          telemetry.addData("putere intake: ", motorIntake.getPower());
          telemetry.addData("putere transfer stang: ", motorTransfer.getPower());
          telemetry.update();
