@@ -16,10 +16,10 @@ public class IntakeTransferTeleOp extends LinearOpMode {
 
     @Override
     public void runOpMode () {
-        motorIntake = hardwareMap.get(DcMotor.class, "motor_intake");
+        motorIntake = hardwareMap.get(DcMotor.class, "MotorIntake");
         motorIntake.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        motorTransfer = hardwareMap.get(DcMotor.class, "transfer_stang");
+            motorTransfer = hardwareMap.get(DcMotor.class, "MotorTransfer");
 
         motorTransfer.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
@@ -34,10 +34,10 @@ public class IntakeTransferTeleOp extends LinearOpMode {
                 motorIntake.setPower(0.0);
             }
             else if (gamepad1.right_bumper) {
-                motorIntake.setPower(1.0);
+                motorIntake.setPower(-1.0);
             }
             else if (gamepad1.left_bumper) {
-                motorIntake.setPower(-1.0);
+                motorIntake.setPower(1.0);
             }
             else {
                 motorIntake.setPower(0.0);
