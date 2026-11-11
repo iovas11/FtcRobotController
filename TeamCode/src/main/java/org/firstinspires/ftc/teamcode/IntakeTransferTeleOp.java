@@ -41,9 +41,9 @@ public class IntakeTransferTeleOp extends LinearOpMode {
                 motorIntake.setPower(1.0);
             }
             else if (gamepad1.dpad_left){
-                motorTransfer.setPower(0.8);
+                motorTransfer.setPower(1.0);
             } else if (gamepad1.dpad_right) {
-                motorTransfer.setPower(-0.8);
+                motorTransfer.setPower(-1.0);
             }
             else {
                 motorIntake.setPower(0.0);
